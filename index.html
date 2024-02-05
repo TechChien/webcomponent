@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://www.itxst.com/package/jquery-3.5.1/jquery.min.js"></script>
+    <script src="https://www.itxst.com/package/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+    <link
+      href="https://www.itxst.com/package/bootstrap-4.5.0/css/bootstrap.css"
+      rel="stylesheet"
+    />
+    <script src="https://www.itxst.com/package/bootstrap-datepicker-1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://www.itxst.com/package/bootstrap-datepicker-1.9.0/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script src="https://www.itxst.com/package/bootstrap-datepicker-1.9.0/locales/bootstrap-datepicker.zh-TW.min.js"></script>
+    <script src="https://www.itxst.com/package/bootstrap-datepicker-1.9.0/locales/bootstrap-datepicker.ja.min.js"></script>
+    <link
+      href="https://www.itxst.com/package/bootstrap-datepicker-1.9.0/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+    />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <input-date lan="ja"></input-date>
+    <select id="selectLan">
+      <option value="ja">JA</option>
+      <option value="zh-CN">zh-CN</option>
+      <option value="zh-TW">zh-TW</option>
+      <option value="en">en</option>
+    </select>
+    <script>
+      $(function () {
+        $("#selectLan").change(function () {
+          console.log($(this).val());
+          $("input-date").attr("lan", $(this).val());
+        });
+      });
+    </script>
+  </body>
+</html>
