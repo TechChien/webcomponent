@@ -1,8 +1,10 @@
 const template = document.createElement("template");
 template.innerHTML = `
   <div id='root' style="display:flex;align-items:center;">
-    <input type="text" id="inputDate" class="form-control" placeholder="yyyy/mm/dd">
-    <slot name="icon">123</slot>
+    <div id="dateContainer">
+      <input type="text" id="inputDate" class="form-control" placeholder="yyyy/mm/dd">
+    </div>
+    <slot name="icon"></slot>
   </div>
 `;
 
@@ -30,10 +32,10 @@ class CustomDatePicker extends HTMLElement {
       autoclose: true, //选择后自动关闭
       clearBtn: true, //清除按钮
       format: "yyyy-mm-dd", //日期格式
+      container:  this.root.querySelector("#dateContainer");
     });
 
     this.icon = this.root.querySelector("slot[name='icon']");
-    console.log(this.icon);
     $(this.icon).click(() => {
       $(this.customInput).datepicker("show");
     });
