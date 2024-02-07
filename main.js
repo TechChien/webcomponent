@@ -32,7 +32,7 @@ class CustomDatePicker extends HTMLElement {
       autoclose: true, //选择后自动关闭
       clearBtn: true, //清除按钮
       format: "yyyy-mm-dd", //日期格式
-      container:  this.root.querySelector("#dateContainer");
+      container:  $(document.activeElement).parent();
     });
 
     this.icon = this.root.querySelector("slot[name='icon']");
